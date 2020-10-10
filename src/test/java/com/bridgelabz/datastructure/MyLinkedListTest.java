@@ -2,7 +2,7 @@ package com.bridgelabz.datastructure;
 
 import org.junit.Test;
 
-import org.junit.Assert;;
+import org.junit.Assert;
 
 public class MyLinkedListTest {
 	
@@ -47,5 +47,17 @@ public class MyLinkedListTest {
 						 myLinkedList.head.getNext().equals(mySecondNode)&&
 						 myLinkedList.tail.equals(myThirdNode);
 		Assert.assertTrue(result);
+	}	
+	@Test
+	public void Given3Number_WhenDeletingANode_ShouldBeFirstNode(){
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.append(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		INode result=myLinkedList.pop();
+		Assert.assertEquals(myFirstNode,result);
 	}	
 }
