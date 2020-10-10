@@ -37,6 +37,11 @@ public class MyLinkedList {
 		}
 	}
 	
+	public void insert(INode myNode, INode newNode) {
+		INode tempNode= myNode.getNext();
+		myNode.setNext(newNode);
+		newNode.setNext(tempNode);
+	}
 	public void printMyNodes(){
 		StringBuffer myNodes = new StringBuffer("My Nodes: ");
 		INode tempNode = head;
@@ -48,6 +53,8 @@ public class MyLinkedList {
 		myNodes.append(tempNode.getKey());
 		System.out.println(myNodes);
 	}
+
+	
 
 	
 	
