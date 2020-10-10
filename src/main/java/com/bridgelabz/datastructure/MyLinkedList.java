@@ -92,4 +92,14 @@ public class MyLinkedList<K> {
 		tempNode1.setNext(tempNode.getNext());
 		return tempNode;
 	}
+
+	public int size() {
+		int count=1;
+		INode tempNode=head;
+		while(tempNode.getNext()!=null){
+			tempNode=tempNode.getNext();
+			count++;
+		}
+		return count;
+	}
 }
