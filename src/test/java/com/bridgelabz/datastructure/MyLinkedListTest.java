@@ -72,4 +72,16 @@ public class MyLinkedListTest {
 		INode result=myLinkedList.popLast();
 		Assert.assertEquals(myThirdNode,result);
 	}	
+	@Test
+	public void Given3Number_WhenSearchingANodeLinkedList_ShouldBeFound(){
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.append(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		INode result=myLinkedList.search(myFirstNode.getKey());
+		Assert.assertEquals(myFirstNode,result);
+	}	
 }
