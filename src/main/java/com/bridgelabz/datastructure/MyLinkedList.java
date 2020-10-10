@@ -1,6 +1,6 @@
 package com.bridgelabz.datastructure;
 
-public class MyLinkedList {
+public class MyLinkedList<K> {
 
 	public INode head;
 	public INode tail;
@@ -38,7 +38,8 @@ public class MyLinkedList {
 	}
 	
 	public void insert(INode myNode, INode newNode) {
-		INode tempNode= myNode.getNext();
+		INode<K> tempNode= search((K) myNode.getKey());
+		tempNode=tempNode.getNext();
 		myNode.setNext(newNode);
 		newNode.setNext(tempNode);
 	}
@@ -71,7 +72,7 @@ public class MyLinkedList {
 		System.out.println(myNodes);
 	}
 
-	public INode search(int key) {
+	public INode<K> search(K key) {
 		INode tempNode=head;
 		while(tempNode!=null && tempNode.getNext()!=null){
 			if(tempNode.getKey().equals(key)){
