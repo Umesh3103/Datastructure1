@@ -60,4 +60,16 @@ public class MyLinkedListTest {
 		INode result=myLinkedList.pop();
 		Assert.assertEquals(myFirstNode,result);
 	}	
+	@Test
+	public void Given3Number_WhenDeletingANode_ShouldBeLastNode(){
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyLinkedList myLinkedList = new MyLinkedList();
+		myLinkedList.append(myFirstNode);
+		myLinkedList.append(mySecondNode);
+		myLinkedList.append(myThirdNode);
+		INode result=myLinkedList.popLast();
+		Assert.assertEquals(myThirdNode,result);
+	}	
 }
