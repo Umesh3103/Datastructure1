@@ -8,7 +8,7 @@ public class SortedLinkedList<K> {
 	public INode tail;
 	
 	public SortedLinkedList() {
-		this.head = null;
+		this.head =null;
 		this.tail = null;
 	}
 	
@@ -18,7 +18,7 @@ public class SortedLinkedList<K> {
 	}
 	
 	public void add(INode newNode){
-		if(this.head==null || (int)head.getKey()> (int)newNode.getKey()){
+		if(this.head==null){
 			newNode.setNext(head);
 			this.head=newNode;
 		}
@@ -26,7 +26,7 @@ public class SortedLinkedList<K> {
 			this.tail=newNode;
 		}
 		else{
-			INode tempNode=head;
+			INode tempNode=this.head;
 			while(tempNode.getNext()!=null && (int)tempNode.getNext().getKey()< (int) newNode.getKey()){
 				tempNode=tempNode.getNext();
 			}

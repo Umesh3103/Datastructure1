@@ -1,7 +1,8 @@
 package com.bridgelabz.datastructure;
 
-import org.junit.Assert;
 import org.junit.Test;
+import org.junit.Assert;
+
 
 public class SortedLinkedListTest {
 	@Test
@@ -15,6 +16,7 @@ public class SortedLinkedListTest {
 		sortedLinkedList.add(mySecondNode);
 		sortedLinkedList.add(myThirdNode);
 		sortedLinkedList.add(myFourthNode);
+		sortedLinkedList.printMyNodes();
 		INode result=sortedLinkedList.remove(myThirdNode);
 		Assert.assertEquals(myThirdNode,result);
 	}
