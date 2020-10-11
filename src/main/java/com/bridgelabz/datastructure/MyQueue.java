@@ -19,4 +19,12 @@ public class MyQueue {
 	public INode top() {
 		return myLinkedList.head;
 	}
+
+	public INode dequeue() {
+		return myLinkedList.pop();
+	}
+
+	public void size() {
+		System.out.println(myLinkedList.size());
+	}
 }

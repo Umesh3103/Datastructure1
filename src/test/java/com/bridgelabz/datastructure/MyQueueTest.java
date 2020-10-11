@@ -17,4 +17,18 @@ public class MyQueueTest {
 		INode top = myQueue.top();
 		Assert.assertEquals(myFirstNode, top);
 	}
+	@Test
+	public void Given3Numbers_WhenPopedToQueue_ShouldBeMatchWithTopNode(){
+		MyNode<Integer> myFirstNode = new MyNode<>(56);
+		MyNode<Integer> mySecondNode = new MyNode<>(30);
+		MyNode<Integer> myThirdNode = new MyNode<>(70);
+		MyQueue myQueue = new MyQueue();
+		myQueue.enqueue(myFirstNode);
+		myQueue.enqueue(mySecondNode);
+		myQueue.enqueue(myThirdNode);
+		INode pop = myQueue.dequeue();
+		myQueue.printQueue();
+		myQueue.size();
+		Assert.assertEquals(myFirstNode, pop);
+	}
 }
