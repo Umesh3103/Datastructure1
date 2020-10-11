@@ -19,6 +19,4 @@ public class MyQueue {
 	public INode top() {
 		return myLinkedList.head;
 	}
-	
-	
 }
