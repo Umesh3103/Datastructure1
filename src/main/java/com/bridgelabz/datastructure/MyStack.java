@@ -22,4 +22,12 @@ public class MyStack {
 		
 	}
 
+	public INode pop() {
+		return myLinkedList.pop();
+	}
+
+	public void size() {
+		System.out.println(myLinkedList.size());
+	}
+
 }
