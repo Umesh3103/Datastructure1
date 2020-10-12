@@ -46,4 +46,14 @@ public class MyLinkedHashMap<K, V> {
 	public String toString(){
 		return "MyLinkedHashMap List{"+ myBucketArray+ '}';
 	}
+	public INode remove(K key) {
+		int index=this.getBucketIndex(key);
+		MyLinkedList<K> myLinkedList=this.myBucketArray.get(index);
+		MyMapNode<K,V> myMapNode= (MyMapNode<K, V>) myLinkedList.search(key);
+		if(myMapNode!=null){
+			myLinkedList.popNode(myMapNode);
+			return myMapNode;
+		}
+		return null;
+	}
 }
