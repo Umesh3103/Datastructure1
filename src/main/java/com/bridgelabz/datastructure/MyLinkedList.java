@@ -24,7 +24,7 @@ public class MyLinkedList<K> {
 		}
 	}
 	
-	public void append(INode newNode) {
+	public void append(INode<K> newNode) {
 		if(this.head==null){
 			this.head=newNode;
 		}
@@ -73,14 +73,14 @@ public class MyLinkedList<K> {
 	}
 
 	public INode<K> search(K key) {
-		INode tempNode=head;
+		INode<K> tempNode=head;
 		while(tempNode!=null && tempNode.getNext()!=null){
 			if(tempNode.getKey().equals(key)){
 				return tempNode;
 			}
 			tempNode=tempNode.getNext();
 		}
-		return tempNode;
+		return null;
 	}
 
 	public INode popNode(INode myNode) {
@@ -94,12 +94,22 @@ public class MyLinkedList<K> {
 	}
 
 	public int size() {
-		int count=1;
 		INode tempNode=head;
-		while(tempNode.getNext()!=null){
-			tempNode=tempNode.getNext();
-			count++;
+		if(head==null){
+			return 0;
 		}
-		return count;
+		else{
+			int count=1;
+			while(tempNode.getNext()!=null){
+				tempNode=tempNode.getNext();
+				count++;
+			}
+			return count;
+		}
+	}
+	
+	@Override
+	public String toString(){
+		return "MyLinkedListNodes{" + head + '}';
 	}
 }
