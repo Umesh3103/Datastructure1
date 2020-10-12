@@ -6,7 +6,7 @@ import org.junit.Assert;
 public class MyLinkedHashMapTest {
 	
 	@Test
-	public void d(){
+	public void GivenASentence_WhenAddedToList_ShouldReturnParanoidFrequency(){
 		String sentence = "Paranoids are not paranoid beacuse they are paranoid but"+
 						" bcz they keep putting themselves into "+
 						"paranoid avoidable situations";
