@@ -44,7 +44,6 @@ public class MyLinkedHashMapTest {
 			myLinkedHashMap.add(word,value);
 		}	
 		INode result=myLinkedHashMap.remove("avoidable");
-		System.out.println(myLinkedHashMap);
 		Assert.assertEquals("avoidable", result.getKey());
 	}
 }
