@@ -11,12 +11,7 @@ public class SortedLinkedList<K> {
 		this.head =null;
 		this.tail = null;
 	}
-	
-	public List OrderedList(){
-		List<Integer> list = new ArrayList<>();
-		return list;
-	}
-	
+
 	public void add(INode newNode){
 		if(this.head==null){
 			newNode.setNext(head);
@@ -24,6 +19,12 @@ public class SortedLinkedList<K> {
 		}
 		if(this.tail==null){
 			this.tail=newNode;
+		}
+		else if(size()==1){
+			if((int)head.getKey()>(int) newNode.getKey()){
+				newNode.setNext(head);
+				this.head=newNode;
+			}
 		}
 		else{
 			INode tempNode=this.head;
@@ -42,6 +43,7 @@ public class SortedLinkedList<K> {
 			if(!tempNode.equals(tail)) myNodes.append("->");
 			tempNode=tempNode.getNext();
 		}
+		myNodes.append("->");
 		myNodes.append(tempNode.getKey());
 		System.out.println(myNodes);
 	}
@@ -68,13 +70,19 @@ public class SortedLinkedList<K> {
 		
 	}
 	public int size() {
-		int count=1;
-		INode tempNode=head;
-		while(tempNode.getNext()!=null){
-			tempNode=tempNode.getNext();
-			count++;
+		if(head==null){
+			return 0;
 		}
-		return count;
+		else{
+			int count=1;
+			INode tempNode=head;
+			while(tempNode.getNext()!=null){
+				tempNode=tempNode.getNext();
+				count++;
+			}
+			return count;
+		}	
+		
 	}
 	public boolean isEmpty(){
 		if(head==null){
